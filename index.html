@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cinema Scope</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="script.js"></script>
+	</head>
+
+	<body>
+
+		<div class="topnav" id="myTopnav">
+		  <a id="mainTitle">Cinema Scope</a>
+		  
+		  <a href="index.html" class="active">Home</a>
+		  <a href="scheduledMovies.html">Scheduled Movies</a>
+		  <a href="advertising.html">Advertising</a>
+		  <a href="aboutUs.html">About Us</a>
+		  <a href="contactUs.html">Contact Us</a>
+		  <a id="displayDate" ></a>
+		  <a id="displayTime" ></a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		  </a>
+		</div>
+
+		<div class="slideshow-container">
+
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="images/Tenet.jpg" style="width:100%">
+		  <div class="text">Tenet</div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="images/ww.jfif" style="width:100%">
+		  <div class="text">Wonder Woman 1984</div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="images/quietPlace.jpg" style="width:100%">
+		  <div class="text">A Quiet Place Part II</div>
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		</div>
+		<br>
+
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+		
+		    <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+            }
+        </script>
+		
+		<div style="margin:20px;">
+		  <div id="text1">
+			<h3>A Little About Us</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque velit, pretium a augue tempus, porttitor sagittis eros. Nulla vel ipsum ex. Nulla rhoncus semper est id rutrum. Ut bibendum venenatis varius. Fusce elementum felis non neque tempus, nec lobortis lacus commodo. Nam rutrum in turpis et pulvinar. Suspendisse finibus a urna in sodales. Proin commodo tortor a lacinia iaculis. Nulla quam nulla, viverra vitae libero sed, commodo efficitur odio. Aliquam finibus sapien nec ultricies condimentum. Morbi convallis risus metus, id maximus urna egestas ut. Donec odio leo, consectetur suscipit neque sit amet, auctor ultrices eros. Curabitur pulvinar tempor dui at sollicitudin.</p>
+			<p>Donec ligula ipsum, cursus ac pharetra non, volutpat ut nisi. Fusce at placerat nisl, at fermentum augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec convallis augue. Maecenas tristique finibus ligula tincidunt aliquam. Donec nec ex in arcu euismod ultrices in id eros. Nulla facilisi. Integer aliquet non tortor sit amet consectetur. Aenean nec laoreet tellus. Etiam molestie mauris et nisi sodales, non vulputate sem euismod. Nunc scelerisque massa consequat enim consequat, a posuere dui cursus. Duis sed diam nisi. Duis lacus ante, vehicula in dapibus sit amet, pulvinar sed lacus. Nulla sit amet pellentesque augue. Donec dignissim, lectus ac vulputate euismod, augue odio dignissim nisi, sit amet eleifend urna orci quis sapien. Pellentesque sodales elit tristique, finibus neque auctor, fringilla risus.</p>
+		  </div>
+		  <div id="text2">
+			<iframe id="video" width="100%" height="450px" src="https://www.youtube.com/embed/LdOM0x0XDMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		  </div>
+		</div>
+
+	</body>
+</html>
